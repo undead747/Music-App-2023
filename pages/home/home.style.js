@@ -52,12 +52,15 @@ const Styles = StyleSheet.create({
         borderColor: '#FFFFFF', 
         borderWidth: 1
     },
-    popularTab: (tabWidth) => ({
+    popularTabList: (tabWidth) => ({
         width: tabWidth,
         backgroundColor: 'transparent',
         borderBottomColor: '#813B49',
-        borderBottomWidth: 1
-    })
+        borderBottomWidth: 2
+    }),
+    popularTabItem: {
+        fontSize: 13,
+    }
  })
 
  export default Styles;

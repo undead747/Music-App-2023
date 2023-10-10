@@ -22,10 +22,22 @@ export default function Home() {
 export function Popular() {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: "1", title: "Music" },
-    { key: "2", title: "Artist" },
-    { key: "3", title: "Album" },
+    { key: 1, title: "Music" },
+    { key: 2, title: "Artist" },
+    { key: 3, title: "Album" },
   ]);
+
+  const renderScene = ({ route }: { route: { key: string; title: string; } }) => {
+    switch (route.key) {
+      case '1':
+        return <MusicTab currIdx={index} Idx={routes[0].key}  />;
+      case '2':
+        return <ArtistTab currIdx={index} Idx={routes[1].key} />;
+      case '3':
+        return <AlbumTab currIdx={index} Idx={routes[2].key} />;
+        return null;
+    }
+  }
 
   return (
     <View>
@@ -41,36 +53,36 @@ export function Popular() {
 }
 
 const renderTabBar = (props) => {
-    const renderLabel = ({ route }) => (
-        <Text>{route.title}</Text>
-      );
+  const renderLabel = ({ route }) => (
+    <Text>{route.title}</Text>
+  );
 
-    return (<TabBar
+  return (<TabBar
     {...props}
     renderLabel={renderLabel}
-    style={Styles.popularTab(Dimensions.get("window").width)}
-    indicatorStyle={{backgroundColor: '#C93655', height: 2.5}}
-    />
-    );
-    }
+    style={Styles.popularTabList(Dimensions.get("window").width)}
+    indicatorStyle={{ backgroundColor: '#C93655', height: 2.5 }}
+  />
+  );
+}
 
-const MusicTab = () => (
-  <View style={{ flex: 1, backgroundColor: "red" }} />
-);
+const MusicTab = (props) => {
+  return (
+    <View style={{ flex: 1, backgroundColor: "red" }} />
+  );
+}
 
-const ArtistTab = () => (
+const ArtistTab = (props) => {
+  console.log(props)
+  return (
+    <View style={{ flex: 1, backgroundColor: "#673ab7" }} />
+  );
+
+}
+
+const AlbumTab = (props) => (
   <View style={{ flex: 1, backgroundColor: "#673ab7" }} />
 );
-
-const AlbumTab = () => (
-  <View style={{ flex: 1, backgroundColor: "#673ab7" }} />
-);
-
-const renderScene = SceneMap({
-  1: MusicTab,
-  2: ArtistTab,
-  3: AlbumTab,
-});
 
 export function HeaderLeft() {
   return <Text style={Styles.headerLeft}>Good Morning, Chau !</Text>;

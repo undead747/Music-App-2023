@@ -1,4 +1,3 @@
-import { Background } from "@react-navigation/elements";
 import { StyleSheet } from "react-native";
 
 const Styles = StyleSheet.create({
@@ -9,13 +8,13 @@ const Styles = StyleSheet.create({
         fontFamily: 'Inter-Regular',
         color: '#FFFFFF',
         fontSize: 15,
-        marginTop: 10
+        marginTop: 20
     },
     headerRight: {
         display: 'flex',
         flexDirection: "row",
         alignItems: "center",
-        marginTop: 10
+        marginTop: 20
     },
     headerRightNotifications: {
         width: 33,
@@ -25,21 +24,25 @@ const Styles = StyleSheet.create({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        marginEnd: 10
+        marginEnd: 20
     },
     headerRightNotificationsIcon: {
         color: '#FFFFFF',
         position: "relative"
+    },
+    headerRightSearchIcon: {
+        color: '#FFFFFF',
+        marginEnd: 20
     },
     headerRightNotificationsIconReddot: {
         borderRadius: 5,
         overflow: 'hidden',
         width: 10,
         height: 10,
-        backgroundColor: "#C93655",
+        backgroundColor: "#B92C4A",
         position:"absolute",
         left: 18,
-        top: 10,
+        top: 5,
     },
     headerRightUserImageWrapper: {
         display: 'flex',
@@ -53,31 +56,6 @@ const Styles = StyleSheet.create({
         borderColor: '#FFFFFF', 
         borderWidth: 1
     },
-    popularTabListWrapper: {
-        position: 'relative',
-    },
-    popularTabListLiner: (tabWidth) => ({
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        width: tabWidth,
-        height: 2,
-        backgroundColor: "rgba(132, 62, 76, 0.8)", 
-    }),
-    popularTabList: (tabWidth) => ({
-        width: tabWidth,
-        backgroundColor: 'transparent',
-    }),
-    popularTabItem: {
-        fontSize: 13,
-        fontFamily: 'Inter-Medium',
-        color: '#A7808A',
-    },
-    selectedPopularTabItem: {
-        fontSize: 13,
-        fontFamily: 'Inter-Medium',
-        color: '#C93655',
-    }
- })
+})
 
- export default Styles;
+export default Styles;

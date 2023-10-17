@@ -5,7 +5,7 @@ export default function ScreenBackground({children}) {
   return (
     <LinearGradient
     locations={[0,1]}
-    colors={['#883f4e', '#411724']}
+    colors={['#733642', '#32111B']}
     useAngle={true} 
     angle={45} 
     angleCenter={{x:0.5,y:0.5}}

@@ -8,6 +8,7 @@ import Setting from './pages/settings/Setting';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from 'react';
+import Youtube, { YoutubeHeaderOptions } from './pages/youtube/Youtube';
 
 const Stack = createNativeStackNavigator();
 SplashScreen.preventAutoHideAsync();
@@ -15,6 +16,7 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [isLoaded] = useFonts({
     "Inter-Regular": require("./assets/fonts/Inter-Regular.ttf"),
+    "Inter-Medium": require("./assets/fonts/Inter-Medium.ttf"),
   });
 
   const handleOnLayout = useCallback(async () => {
@@ -31,8 +33,8 @@ export default function App() {
     <SafeAreaView style={{ flex: 1 }} onLayout={handleOnLayout}>
       <NavigationContainer>
             <Stack.Navigator>
+              <Stack.Screen name='Youtube' component={Youtube} options={YoutubeHeaderOptions} />
               <Stack.Screen name='Home' component={Home} options={HomeHeaderOptions} />
-              <Stack.Screen name='Search' component={Search} />
               <Stack.Screen name='Library' component={Library} />
               <Stack.Screen name='Settings' component={Setting} />
             </Stack.Navigator>
